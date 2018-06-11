@@ -24,7 +24,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    MainWindow *Form1;
 
     void printfs(const char* s);
     void printcs(const char c);
@@ -63,6 +62,12 @@ private:
     QRadioButton *visibleRadioButton;
     QRadioButton *invisibleRadioButton;
     QPushButton *runButton;
+
+    // 个人班级、学号、姓名部分
+    QGroupBox *idGroupBox;
+    QLabel *classLabel;
+    QLabel *noLabel;
+    QLabel *nameLabel;
 
 private slots:
     void runClicked();

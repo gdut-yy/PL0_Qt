@@ -14,7 +14,7 @@
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent){
-    setWindowTitle(tr("（GDUT）PL0编译器 —— 高仿Qt重制版 v1.0.0    【GitHub 地址：https://github.com/gdut-yy/PL0_Qt 】"));   //设置标题
+    setWindowTitle(tr("（GDUT）PL0编译器 —— 高仿Qt重制版 v1.0.1    【GitHub 地址：https://github.com/gdut-yy/PL0_Qt 】"));   //设置标题
 
     createPL0Page();
     setCentralWidget(pl0Page);
@@ -70,6 +70,23 @@ void MainWindow::createPL0Page(){
         connect(runButton, SIGNAL(clicked(bool)), this, SLOT(runClicked()));
         runButton->setFont(qfont);
 
+    // 个人班级、学号、姓名部分
+    // 定义页面字体样式
+    QFont idFont;
+    idFont.setPointSize(14);
+    idFont.setFamily("黑体");
+    idFont.setBold(true);
+    idGroupBox = new QGroupBox(tr("作者"));
+    classLabel = new QLabel(tr("班级：15计科6班"));
+    noLabel = new QLabel(tr("学号：3115005124"));
+    nameLabel = new QLabel(tr("姓名：张逸扬"));
+    QLayout *idLayout = new QVBoxLayout;
+    idLayout->addWidget(classLabel);
+    idLayout->addWidget(noLabel);
+    idLayout->addWidget(nameLabel);
+    idGroupBox->setLayout(idLayout);
+    idGroupBox->setFont(idFont);
+
     QGridLayout *pageLayout = new QGridLayout;
     pageLayout->setColumnStretch(0,5);
     pageLayout->setColumnStretch(1,1);
@@ -79,12 +96,15 @@ void MainWindow::createPL0Page(){
     pageLayout->setRowStretch(3,5);     // groupbox
     pageLayout->setRowStretch(4,1);
     pageLayout->setRowStretch(5,2);     // button
-    pageLayout->setRowStretch(6,10);
-    pageLayout->addWidget(pl0TextEdit,0,0,7,1);
+    pageLayout->setRowStretch(6,3);
+    pageLayout->setRowStretch(7,4);     // idgroupbox
+    pageLayout->setRowStretch(8,3);
+    pageLayout->addWidget(pl0TextEdit,0,0,9,1);
     pageLayout->addWidget(sourceLabel,0,1,1,1);
     pageLayout->addWidget(sourceLineEdit,1,1,1,1);
     pageLayout->addWidget(isVisibleGroupBox,3,1,1,1);
     pageLayout->addWidget(runButton,5,1,1,1);
+    pageLayout->addWidget(idGroupBox,7,1,1,1);
     pl0Page->setLayout(pageLayout);
 }
 
