@@ -14,7 +14,7 @@
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent){
-    setWindowTitle(tr("（GDUT）PL0编译器 —— 高仿Qt重制版 v1.0.1    【GitHub 地址：https://github.com/gdut-yy/PL0_Qt 】"));   //设置标题
+    setWindowTitle(tr("（GDUT）PL0编译器 —— 高仿Qt重制版 v1.0.2    【GitHub 地址：https://github.com/gdut-yy/PL0_Qt 】"));   //设置标题
 
     createPL0Page();
     setCentralWidget(pl0Page);
@@ -52,7 +52,7 @@ void MainWindow::createPL0Page(){
     sourceLabel = new QLabel(tr("源程序名"));
         sourceLabel->setFont(qfont);
 
-    sourceLineEdit = new QLineEdit(tr("E01"));
+    sourceLineEdit = new QLineEdit(tr("DE01"));
         sourceLineEdit->setFont(qfont1);
 
     isVisibleGroupBox = new QGroupBox(tr("目标代码"));

@@ -1,6 +1,31 @@
-# PL/0 编译器 高仿Qt重制版 v1.0.0
+# PL/0 编译器 高仿Qt重制版（已更新至 v1.0.2）
 
-## 一、项目来源
+## 一、相关 LINK
+
+| 目录 | 说明 |
+| - | - |
+| [PL0_Raw](https://github.com/gdut-yy/PL0/tree/master/PL0_Raw) | 老师所提供的PL0项目（原始代码，实验和课设需在此基础上进行功能扩充） |
+| [**PL0_Exp**](https://github.com/gdut-yy/PL0/tree/master/PL0_Exp) | **本人的实验报告项目** |
+| [**PL0_Des**](https://github.com/gdut-yy/PL0/tree/master/PL0_Des) | **本人的课程设计项目** |
+| [PL0_Cpp](https://github.com/gdut-yy/PL0_Cpp) | 教材附录A中的 PL/0代码（C版本）。（所用编译器是 VS2017） |
+| [PL0_Java](https://github.com/gdut-yy/PL0/tree/master/PL0_Java) | PL0_Cpp 改写而成的 PL/0代码（Java版本）。（所用编译器是 eclipse） |
+| [**PL0_Qt**](https://github.com/gdut-yy/PL0_Qt) | **本人的 Qt 高仿重制版** |
+
+## 二、实现功能
+	
+	1. 增加了保留字 ELSE，FOR，STEP，UNTIL，RETURN； 运算符 *=，/=，&，||，！ ；
+	2. 不等号 由 # 改为了 <> ；
+	3. 增加了条件语句的ELSE子句 ；
+	4. 扩充赋值运算：*= 和 /= ；
+	5. 扩充语句。FOR <变量>:=<表达式>STEP<表达式>UNTIL<表达式>Do<语句> ；
+	6. （选做）扩充运算符 +=，-= ；
+	7. （选做）扩充运算：++ 和 -- ；
+	8. （选做）多行注释功能 /**/ 实现 ；
+	9. （选做）单行注释功能 // 实现 ；
+
+----
+
+## 三、项目来源
 
 本项目源于 本人大三下学期 编译原理课程 的课内实验和课程设计。课程用书是 清华大学出版社的《编译原理（第3版）》。
 
@@ -14,7 +39,7 @@
 
 ![](qt00.png)
 
-## 二、与 Borland C++Builder 6 对比（以 E01.PL0 为例）
+## 四、与 Borland C++Builder 6 对比（以 E01.PL0 为例）
 
 ### 1、E01.PL0 原文件（显示目标代码）：
 
